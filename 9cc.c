@@ -72,10 +72,6 @@ Token *new_token(TokenKind kind,Token *cur,char *str){
     tok->kind = kind;
     tok->str = str;
     cur->next = tok;
-    //test用
-    if(kind == TK_RESERVED){
-        printf("<test用> %c\n",*str);
-    }
     return tok;
 }
 //入力文字列pをトークナイズしてそれを返す
@@ -90,7 +86,8 @@ Token *tokenize(char *p){
             continue;
         }
         if(*p == '+' || *p == '-'){
-
+            //p++としてるのは次の文字を見る為
+            //new_tokenにはpが渡されて、その後pは+1される
             cur = new_token(TK_RESERVED,cur,p++);
             continue;
         }
