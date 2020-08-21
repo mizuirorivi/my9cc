@@ -229,8 +229,7 @@ Node *primary(){
 //式に応じたアセンブリの出力
 void gen(Node *node){
     if(node->kind == ND_NUM){
-        printf("    mov r8, BYTE PTR %d\n",node->val);
-        printf("    push r8\n");
+        printf("    push %d\n",node->val);
         return;
     }
     gen(node->lhs);
@@ -241,7 +240,7 @@ void gen(Node *node){
 
     switch(node->kind){
         case ND_ADD:
-            printf("	add rax, rdi\n");
+            printf("    add rax, rdi\n");
             break;
         case ND_SUB:
             printf("    sub rax, rdi\n");

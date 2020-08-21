@@ -1,10 +1,10 @@
 CFLAGS=-std=c11 -g -static
 
-9cc: 9cc.c
+mizuirocc: mizuirocc.c
 
-test: 9cc
+test: mizuirocc
 	./test.sh
 clean:
-	rm -r 9cc *.o *~ tmp*
+	rm -r mizuirocc *.o *~ tmp*
 
 .PHONY: test clean
