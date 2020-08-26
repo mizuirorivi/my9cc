@@ -1,0 +1,7 @@
+version: "3"
+services:
+  mycompiler:
+    image: compilerbook
+    volumes:
+      - $HOME/my9cc:/mizuirocc
+    tty: true
